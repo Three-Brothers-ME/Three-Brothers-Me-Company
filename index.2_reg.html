@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Regalo Princess </title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #bc3c8dc8, #000000fd);
+    }
+
+    .chat-box {
+        width: 320px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    .header {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .message {
+        background: #036e2a;
+        color: rgb(248, 239, 239);
+        padding: 10px;
+        border-radius: 10px;
+        width: fit-content;
+        max-width: 80%;
+        margin: 10px auto;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.5s;
+    }
+
+    .message.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background: #0084ffb8;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="chat-box">
+    <div class="header">For You</div>
+    
+    <div id="msg" class="message"></div>
+    
+    <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+    
+    <div class="instruccion">Presiona el botón 👆</div> 
+</div>
+</div>
+
+<script>
+const mensajes = [
+    "Happy Birthday 🎉",
+    "Te Amo ❤️",
+    "Eres increíble 💖",
+    "Eres preciosa 😍",
+    "Me encantas 💕",
+    "Gracias por Todo  💑",
+    "Nunca cambies 🌹",
+    "Sigue siendo tú misma 🌸",
+    "Eres mi inspiración 🌟",
+    "Siempre a tu lado 🤝",
+    "Sigue brillando ✨",
+    "Eres única 🌷",
+    "Eres Especial 💝",
+];
+
+let index = 0;
+
+function mostrarMensaje() {
+    const msg = document.getElementById("msg");
+
+    msg.innerHTML = mensajes[index];
+    msg.classList.add("show");
+
+    index++;
+
+    if (index >= mensajes.length) {
+        index = 0;
+    }
+}
+</script>
+
+</body>
+</html
